@@ -11,6 +11,7 @@ import os
 import sys
 from django.core.wsgi import get_wsgi_application
 
+sys.path.append('/Users/floshin33/DjangoProject/smallblog')
 sys.path.append('C:/Users/robin/Bitnami Django Stack projects/smallblog')
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "smallblog.settings")
 

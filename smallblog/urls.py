@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.views.debug import default_urlconf
 from django.urls import include, path, re_path
 from django.conf.urls import url
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^blog/', include('blog.urls')),
-    re_path(r'^$', default_urlconf),
+    url(r'^accounts/login/$', auth_views.login, name='login'),
+    url(r'^accounts/logout/$', auth_views.logout, name='logout', kwargs={'next_page': '/'}),
+    url(r'', include('blog.urls')),
 ]
